@@ -1,6 +1,17 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const removeImports = require("next-remove-imports")();
 
-module.exports = nextConfig
+const nextConfig = {
+  baseUrl: "src",
+  reactStrictMode: true,
+  swcMinify: true,
+  images: {
+    loader: "akamai",
+    path: "/",
+    unoptimized: true,
+  },
+};
+
+module.exports = removeImports({
+  ...nextConfig,
+});
