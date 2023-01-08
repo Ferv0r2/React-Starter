@@ -2,10 +2,10 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 const metaData = {
-  title: "UltraSounds",
-  siteName: "UltraSounds",
-  description: "UltraSounds",
-  url: "https://nfps.metaoneer.club/",
+  title: "Metacord",
+  siteName: "Metacord",
+  description: "Metacord",
+  url: "https://discord.metaoneer.club/",
   robots: "follow, index",
   image: "banner.png",
 };
@@ -36,4 +36,4 @@ const SEO = () => {
   );
 };
 
-export default SEO;
+export { SEO };

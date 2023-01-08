@@ -1,8 +1,7 @@
 import React, { FC, ReactNode, useEffect, useState } from "react";
 
 /* Layout */
-import SEO from "layout/SEO";
-import { ScrollTop } from "layout/ScrollTop";
+import { SEO, ScrollTop, Sidebar, InnerLayout, Header } from "layout";
 
 interface Props {
   children: ReactNode;
@@ -34,8 +33,14 @@ const Layout: FC<Props> = ({ children }) => {
   return (
     <>
       <SEO />
-      {children}
-      <ScrollTop active={scrollActive} />
+      <div className="relative flex w-screen h-screen">
+        <Sidebar />
+        <div className="max-w-[calc(100vw-288px)]">
+          <Header />
+          <InnerLayout node={children} />
+          <ScrollTop active={scrollActive} />
+        </div>
+      </div>
     </>
   );
 };
